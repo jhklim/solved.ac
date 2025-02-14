@@ -11,9 +11,6 @@ public class BOJ2884 {
 
         sc.close();
 
-        int target_H = 0;
-        int target_M = 0;
-
         if (M >= 45) {
             M -= 45;
         } else {
