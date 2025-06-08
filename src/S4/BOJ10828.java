@@ -17,36 +17,30 @@ public class BOJ10828 {
 
         for (int i = 0; i < N; i++) {
             String next = br.readLine();
+            String[] parts = next.split(" ");
 
-            switch (next) {
-                case "pop":
-                    if(stack.empty()) {
-                        bw.write(-1 + "\n");
-                    } else {
-                        bw.write(stack.pop() + "\n");
-                    }
-                    break;
-                case "size":
-                    bw.write(stack.size() + "\n");
-                    break;
-                case "empty":
-                    if (stack.empty()) {
-                        bw.write(1 + "\n");
-                    } else {
-                        bw.write(0 + "\n");
-                    }
-                    break;
-                case "top":
-                    if(stack.empty()) {
-                        bw.write(-1 + "\n");
-                    } else {
-                        bw.write(stack.peek() + "\n");
-                    }
-                    break;
-                default:
-                    int num = Integer.parseInt(next.split(" ")[1]);
-                    stack.push(num);
-                    break;
+            if(parts[0].equals("push")) {
+                stack.push(Integer.parseInt(parts[1]));
+            } else if (next.equals("pop")) {
+                if(stack.isEmpty()) {
+                    bw.write("-1\n");
+                } else {
+                    bw.write(stack.pop() + "\n");
+                }
+            } else if (next.equals("size")) {
+                bw.write(stack.size() + "\n");
+            } else if(next.equals("empty")) {
+                if (stack.isEmpty()) {
+                    bw.write("1\n");
+                } else {
+                    bw.write("0\n");
+                }
+            } else if (next.equals("top")) {
+                if(stack.isEmpty()) {
+                    bw.write("-1\n");
+                } else {
+                    bw.write(stack.peek() + "\n");
+                }
             }
         }
         bw.flush();
