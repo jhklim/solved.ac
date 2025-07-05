@@ -9,7 +9,7 @@ public class BOJ1065 {
 
         int N = Integer.parseInt(br.readLine());
 
-        int count = 0;
+        int count;
 
         if(N < 100) {
             count = N;
